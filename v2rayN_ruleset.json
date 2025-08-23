@@ -1,6 +1,28 @@
 [
 	{
 	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "direct",
+	  "ip": [
+		"geoip:private"
+	  ],
+	  "enabled": true,
+	  "remarks": "private"
+	},
+	{
+	  "port": "",
+	  "outboundTag": "proxy",
+	  "domain": [
+		"cdnjs.com",
+		"cloudflare.com",
+		"cloudflarestatus.com",
+		"one.one.one.one"
+	  ],
+	  "enabled": true,
+	  "remarks": "cloudflare"
+	},
+	{
+	  "port": "",
 	  "outboundTag": "proxy",
 	  "ip": [
 		"104.21.0.111",
@@ -49208,16 +49230,6 @@
 	},
 	{
 	  "port": "",
-	  "network": "tcp,udp",
-	  "outboundTag": "direct",
-	  "ip": [
-		"geoip:private"
-	  ],
-	  "enabled": true,
-	  "remarks": "private"
-	},
-	{
-	  "port": "",
 	  "outboundTag": "proxy",
 	  "domain": [
 		"apkmirror.com"
@@ -76024,6 +76036,61 @@
 	{
 	  "port": "",
 	  "outboundTag": "proxy",
+	  "domain": [
+		"phncdn.com",
+		"pornhub.com"
+	  ],
+	  "enabled": true,
+	  "remarks": "p_domains"
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "process": [
+		"MTGA.exe"
+	  ],
+	  "enabled": true,
+	  "remarks": "MTG Arena"
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "ip": [
+		"52.177.198.147",
+		"52.179.210.66",
+		"66.22.243.184",
+		"35.217.9.33"
+	  ],
+	  "enabled": true,
+	  "remarks": "amazon ip"
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "domain": [
+		"amazonaws.com",
+		"amazongames.com",
+		"cloudfront.net"
+	  ],
+	  "enabled": true,
+	  "remarks": "amazon domain"
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "domain": [
+		"mtgarena.com"
+	  ],
+	  "enabled": true,
+	  "remarks": "mtga domain"
+	},
+	{
+	  "port": "",
+	  "outboundTag": "proxy",
 	  "ip": [
 		"152.195.34.118",
 		"208.99.84.16",
@@ -76175,16 +76242,6 @@
 	  ],
 	  "enabled": true,
 	  "remarks": "p_ips"
-	},
-	{
-	  "port": "",
-	  "outboundTag": "proxy",
-	  "domain": [
-		"phncdn.com",
-		"pornhub.com"
-	  ],
-	  "enabled": true,
-	  "remarks": "p_domains"
 	},
 	{
 	  "port": "0-65535",
