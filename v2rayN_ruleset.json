@@ -11,6 +11,47 @@
 	},
 	{
 	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "direct",
+	  "domain": [
+		"regexp:.*\\.xn--p1ai$",
+		"regexp:.*\\.su$",
+		"regexp:.*\\.ru$"
+	  ],
+	  "enabled": true,
+	  "remarks": "\u0440\u0444"
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "domain": [
+		"dns.alidns.com/dns-query",
+		"cloudflare-dns.com/dns-query",
+		"dns.cloudflare.com/dns-query",
+		"dns.google/dns-query",
+		"doh.dns.sb/dns-query",
+		"doh.opendns.com/dns-query",
+		"doh.pub/dns-query"
+	  ],
+	  "enabled": true,
+	  "remarks": "dns_by_domain"
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "ip": [
+		"1.0.0.1",
+		"1.1.1.1",
+		"8.8.8.8",
+		"8.8.4.4"
+	  ],
+	  "enabled": true,
+	  "remarks": "dns_to_vps"
+	},
+	{
+	  "port": "",
 	  "outboundTag": "proxy",
 	  "domain": [
 		"cdnjs.com",
