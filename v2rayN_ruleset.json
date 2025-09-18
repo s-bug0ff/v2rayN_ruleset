@@ -3,6 +3,16 @@
 	  "port": "",
 	  "network": "tcp,udp",
 	  "outboundTag": "direct",
+	  "protocol": [
+		"bittorrent"
+	  ],
+	  "enabled": true,
+	  "remarks": "torrent_to_direct"
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "direct",
 	  "ip": [
 		"geoip:private"
 	  ],
