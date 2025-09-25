@@ -13,6 +13,16 @@
 	  "port": "",
 	  "network": "tcp,udp",
 	  "outboundTag": "direct",
+	  "process": [
+		"NewWorld.exe"
+	  ],
+	  "enabled": true,
+	  "remarks": "nw_direct"
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "direct",
 	  "ip": [
 		"geoip:private"
 	  ],
@@ -29,7 +39,7 @@
 		"regexp:.*\\.ru$"
 	  ],
 	  "enabled": true,
-	  "remarks": "\u0440\u0444"
+	  "remarks": "ru_to_direct"
 	},
 	{
 	  "port": "",
