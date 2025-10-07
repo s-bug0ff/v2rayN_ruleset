@@ -49317,7 +49317,9 @@
 	  "network": "tcp,udp",
 	  "outboundTag": "proxy",
 	  "domain": [
-		"twitch.tv"
+		"twitch.tv",
+		"www.twitch.tv",
+		"usher.ttvnw.net"
 	  ],
 	  "enabled": true,
 	  "remarks": "twich"
