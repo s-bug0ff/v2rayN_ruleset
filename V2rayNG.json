@@ -28,7 +28,7 @@
       ],
       "network" : "tcp,udp",
       "outboundTag" : "direct",
-      "remarks" : "privat",
+      "remarks" : "private",
       "ruleType" : 0
    },
    {
