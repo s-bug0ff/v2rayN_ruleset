@@ -1,0 +1,126 @@
+#!/usr/bin/env perl
+#
+# Pre-commit hook для обработки v2rayN_ruleset.json
+# Выполняется автоматически при каждом git commit
+#
+
+use strict;
+use warnings;
+use JSON;
+
+# Имя исходного файла
+my $source_file = 'v2rayN_ruleset.json';
+# Имя выходного файла
+my $output_file = 'V2rayNG.json';
+
+# Проверяем, существует ли исходный файл
+unless (-f $source_file) {
+    print "Файл $source_file не найден. Пропускаем обработку.\n";
+    exit 0;
+}
+
+print "Обработка файла: $source_file\n";
+
+# Функция для чтения файла
+sub read_file {
+    my ($filename) = @_;
+    open(my $fh, '<:encoding(UTF-8)', $filename) or die "Не удалось открыть файл $filename: $!";
+    local $/;
+    my $content = <$fh>;
+    close($fh);
+    return $content;
+}
+
+# Функция для записи файла
+sub write_file {
+    my ($filename, $content) = @_;
+    open(my $fh, '>:encoding(UTF-8)', $filename) or die "Не удалось создать файл $filename: $!";
+    print $fh $content;
+    close($fh);
+}
+
+# Читаем исходный файл
+my $content;
+eval {
+    $content = read_file($source_file);
+};
+if ($@) {
+    print STDERR "Ошибка чтения файла $source_file: $@\n";
+    exit 1;
+}
+
+# Парсим JSON
+my $json = JSON->new->utf8->allow_nonref->pretty->canonical;
+my $data;
+eval {
+    $data = $json->decode($content);
+};
+if ($@) {
+    print STDERR "ОШИБКА: Файл $source_file содержит невалидный JSON:\n";
+    print STDERR "  $@\n";
+    exit 1;
+}
+
+# Проверяем, что это массив
+unless (ref($data) eq 'ARRAY') {
+    print STDERR "ОШИБКА: Ожидается массив в файле $source_file\n";
+    exit 1;
+}
+
+# Обрабатываем данные
+my @filtered_rules = ();
+my $removed_count = 0;
+my $port_removed_count = 0;
+
+foreach my $rule (@$data) {
+    # Пропускаем записи, которые содержат "process"
+    if (exists $rule->{'process'}) {
+        $removed_count++;
+        next;
+    }
+    
+    # Удаляем поле "port", если оно пустое
+    if (exists $rule->{'port'} && $rule->{'port'} eq '') {
+        delete $rule->{'port'};
+        $port_removed_count++;
+    }
+    
+    # Добавляем обработанное правило в новый массив
+    push @filtered_rules, $rule;
+}
+
+print "  Удалено записей с 'process': $removed_count\n";
+print "  Удалено пустых полей 'port': $port_removed_count\n";
+print "  Осталось записей: " . scalar(@filtered_rules) . "\n";
+
+# Кодируем обратно в JSON
+my $output_content;
+eval {
+    $output_content = $json->encode(\@filtered_rules);
+};
+if ($@) {
+    print STDERR "Ошибка кодирования JSON: $@\n";
+    exit 1;
+}
+
+# Сохраняем результат
+eval {
+    write_file($output_file, $output_content);
+};
+if ($@) {
+    print STDERR "Ошибка записи файла $output_file: $@\n";
+    exit 1;
+}
+
+print "  Файл сохранен: $output_file\n";
+
+# Добавляем файл в staging area
+my $git_add_result = `git add "$output_file" 2>&1`;
+if ($? != 0) {
+    print STDERR "Ошибка добавления файла в git: $git_add_result\n";
+    exit 1;
+}
+
+print "  Файл добавлен в коммит\n";
+print "\nОбработка завершена успешно.\n";
+exit 0;

@@ -42,7 +42,7 @@
 		"geoip:private"
 	  ],
 	  "enabled": true,
-	  "remarks": "private",
+	  "remarks": "privat",
 	  "ruleType": 0
 	},
 	{
