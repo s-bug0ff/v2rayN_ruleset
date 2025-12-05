@@ -1,6 +1,22 @@
 [
 	{
 	  "port": "",
+	  "outboundTag": "direct",
+	  "process": [
+		"LeagueClient.exe",
+		"LeagueClientUx.exe",
+		"LeagueClientUxRender.exe",
+		"RiotClientCrashHandler.exe",
+		"RiotClientServices.exe",
+		"vgc.exe",
+		"vgtray.exe",
+		"League of Legends.exe"
+	  ],
+	  "enabled": true,
+	  "remarks": "lol_direct"
+	},
+	{
+	  "port": "",
 	  "network": "tcp,udp",
 	  "outboundTag": "direct",
 	  "ip": [
