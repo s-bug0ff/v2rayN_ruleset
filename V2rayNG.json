@@ -1,5 +1,15 @@
 [
    {
+      "enabled" : true,
+      "ip" : [
+         "geoip:private"
+      ],
+      "network" : "tcp,udp",
+      "outboundTag" : "direct",
+      "remarks" : "geoip:private",
+      "ruleType" : 0
+   },
+   {
       "domain" : [
          "regexp:.*\\.xn--p1ai$",
          "regexp:.*\\.su$",
@@ -24,11 +34,11 @@
    {
       "enabled" : true,
       "ip" : [
-         "geoip:private"
+         "geoip:netflix"
       ],
       "network" : "tcp,udp",
-      "outboundTag" : "direct",
-      "remarks" : "private",
+      "outboundTag" : "proxy",
+      "remarks" : "geoip:netflix",
       "ruleType" : 0
    },
    {
@@ -78,7 +88,7 @@
       "enabled" : true,
       "network" : "tcp,udp",
       "outboundTag" : "proxy",
-      "remarks" : "amazon domain",
+      "remarks" : "geosite:amazon",
       "ruleType" : 0
    },
    {
@@ -88,7 +98,7 @@
       ],
       "network" : "tcp,udp",
       "outboundTag" : "proxy",
-      "remarks" : "cloudfront",
+      "remarks" : "geoip:cloudfront",
       "ruleType" : 0
    },
    {
@@ -97,7 +107,7 @@
       ],
       "enabled" : true,
       "outboundTag" : "proxy",
-      "remarks" : "cloudflare",
+      "remarks" : "geosite:cloudflare",
       "ruleType" : 0
    },
    {
@@ -106,7 +116,7 @@
          "geoip:cloudflare"
       ],
       "outboundTag" : "proxy",
-      "remarks" : "cloudflare",
+      "remarks" : "geoip:cloudflare",
       "ruleType" : 0
    },
    {
@@ -199,7 +209,7 @@
       ],
       "enabled" : true,
       "outboundTag" : "proxy",
-      "remarks" : "rutracker",
+      "remarks" : "geosite:rutracker",
       "ruleType" : 0
    },
    {
@@ -208,7 +218,7 @@
       ],
       "enabled" : true,
       "outboundTag" : "proxy",
-      "remarks" : "tiktok",
+      "remarks" : "geosite:tiktok",
       "ruleType" : 0
    },
    {
@@ -217,7 +227,7 @@
       ],
       "enabled" : true,
       "outboundTag" : "proxy",
-      "remarks" : "notion",
+      "remarks" : "geosite:notion",
       "ruleType" : 0
    },
    {
@@ -748,7 +758,7 @@
       "enabled" : true,
       "network" : "tcp,udp",
       "outboundTag" : "proxy",
-      "remarks" : "twich",
+      "remarks" : "geosite:twitch",
       "ruleType" : 0
    },
    {
@@ -766,7 +776,7 @@
       ],
       "enabled" : true,
       "outboundTag" : "proxy",
-      "remarks" : "hetzner",
+      "remarks" : "geosite:hetzner",
       "ruleType" : 0
    },
    {
@@ -775,7 +785,7 @@
          "geoip:twitter"
       ],
       "outboundTag" : "proxy",
-      "remarks" : "twitter",
+      "remarks" : "geoip:twitter",
       "ruleType" : 0
    },
    {
@@ -793,7 +803,7 @@
          "geoip:facebook"
       ],
       "outboundTag" : "proxy",
-      "remarks" : "meta",
+      "remarks" : "geoip:facebook",
       "ruleType" : 0
    },
    {
@@ -802,7 +812,7 @@
       ],
       "enabled" : true,
       "outboundTag" : "proxy",
-      "remarks" : "google",
+      "remarks" : "geosite:google",
       "ruleType" : 0
    },
    {
@@ -812,7 +822,7 @@
       "enabled" : true,
       "network" : "tcp,udp",
       "outboundTag" : "proxy",
-      "remarks" : "spotify_domain",
+      "remarks" : "geosite:spotify",
       "ruleType" : 0
    },
    {
@@ -836,7 +846,7 @@
       ],
       "enabled" : true,
       "outboundTag" : "proxy",
-      "remarks" : "chatgpt_domains",
+      "remarks" : "geosite:openai",
       "ruleType" : 0
    },
    {
@@ -846,7 +856,7 @@
       "enabled" : true,
       "network" : "tcp,udp",
       "outboundTag" : "proxy",
-      "remarks" : "youtube_domain",
+      "remarks" : "geosite:youtube",
       "ruleType" : 0
    },
    {
@@ -856,7 +866,7 @@
       "enabled" : true,
       "network" : "tcp,udp",
       "outboundTag" : "proxy",
-      "remarks" : "discord_domain",
+      "remarks" : "geosite:discord",
       "ruleType" : 0
    },
    {
@@ -865,7 +875,7 @@
       ],
       "enabled" : true,
       "outboundTag" : "proxy",
-      "remarks" : "pornhub",
+      "remarks" : "geosite:pornhub",
       "ruleType" : 0
    },
    {

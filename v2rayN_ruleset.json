@@ -3,6 +3,17 @@
 	  "port": "",
 	  "network": "tcp,udp",
 	  "outboundTag": "direct",
+	  "ip": [
+		"geoip:private"
+	  ],
+	  "enabled": true,
+	  "remarks": "geoip:private",
+	  "ruleType": 0
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "direct",
 	  "domain": [
 		"regexp:.*\\.xn--p1ai$",
 		"regexp:.*\\.su$",
@@ -35,14 +46,13 @@
 	  "ruleType": 0
 	},
 	{
-	  "port": "",
 	  "network": "tcp,udp",
-	  "outboundTag": "direct",
+	  "outboundTag": "proxy",
 	  "ip": [
-		"geoip:private"
+		"geoip:netflix"
 	  ],
 	  "enabled": true,
-	  "remarks": "private",
+	  "remarks": "geoip:netflix",
 	  "ruleType": 0
 	},
 	{
@@ -108,7 +118,7 @@
 		"geosite:amazon"
 	  ],
 	  "enabled": true,
-	  "remarks": "amazon domain",
+	  "remarks": "geosite:amazon",
 	  "ruleType": 0
 	},
 	{
@@ -119,7 +129,7 @@
 		"geoip:cloudfront"
 	  ],
 	  "enabled": true,
-	  "remarks": "cloudfront",
+	  "remarks": "geoip:cloudfront",
 	  "ruleType": 0
 	},
 	{
@@ -129,7 +139,7 @@
 		"geosite:cloudflare"
 	  ],
 	  "enabled": true,
-	  "remarks": "cloudflare",
+	  "remarks": "geosite:cloudflare",
 	  "ruleType": 0
 	},
 	{
@@ -139,7 +149,7 @@
 		"geoip:cloudflare"
 	  ],
 	  "enabled": true,
-	  "remarks": "cloudflare",
+	  "remarks": "geoip:cloudflare",
 	  "ruleType": 0
 	},
 	{
@@ -239,7 +249,7 @@
 		"geosite:rutracker"
 	  ],
 	  "enabled": true,
-	  "remarks": "rutracker",
+	  "remarks": "geosite:rutracker",
 	  "ruleType": 0
 	},
 	{
@@ -249,7 +259,7 @@
 		"geosite:tiktok"
 	  ],
 	  "enabled": true,
-	  "remarks": "tiktok",
+	  "remarks": "geosite:tiktok",
 	  "ruleType": 0
 	},
 	{
@@ -259,7 +269,7 @@
 		"geosite:notion"
 	  ],
 	  "enabled": true,
-	  "remarks": "notion",
+	  "remarks": "geosite:notion",
 	  "ruleType": 0
 	},
 	{
@@ -793,7 +803,7 @@
 		"geosite:twitch"
 	  ],
 	  "enabled": true,
-	  "remarks": "twich",
+	  "remarks": "geosite:twitch",
 	  "ruleType": 0
 	},
 	{
@@ -813,7 +823,7 @@
 		"geosite:hetzner"
 	  ],
 	  "enabled": true,
-	  "remarks": "hetzner",
+	  "remarks": "geosite:hetzner",
 	  "ruleType": 0
 	},
 	{
@@ -823,7 +833,7 @@
 		"geoip:twitter"
 	  ],
 	  "enabled": true,
-	  "remarks": "twitter",
+	  "remarks": "geoip:twitter",
 	  "ruleType": 0
 	},
 	{
@@ -843,7 +853,7 @@
 		"geoip:facebook"
 	  ],
 	  "enabled": true,
-	  "remarks": "meta",
+	  "remarks": "geoip:facebook",
 	  "ruleType": 0
 	},
 	{
@@ -853,7 +863,7 @@
 		"geosite:google"
 	  ],
 	  "enabled": true,
-	  "remarks": "google",
+	  "remarks": "geosite:google",
 	  "ruleType": 0
 	},
 	{
@@ -875,7 +885,7 @@
 		"geosite:spotify"
 	  ],
 	  "enabled": true,
-	  "remarks": "spotify_domain",
+	  "remarks": "geosite:spotify",
 	  "ruleType": 0
 	},
 	{
@@ -901,7 +911,7 @@
 		"geosite:openai"
 	  ],
 	  "enabled": true,
-	  "remarks": "chatgpt_domains",
+	  "remarks": "geosite:openai",
 	  "ruleType": 0
 	},
 	{
@@ -912,7 +922,7 @@
 		"geosite:youtube"
 	  ],
 	  "enabled": true,
-	  "remarks": "youtube_domain",
+	  "remarks": "geosite:youtube",
 	  "ruleType": 0
 	},
 	{
@@ -923,7 +933,7 @@
 		"geosite:discord"
 	  ],
 	  "enabled": true,
-	  "remarks": "discord_domain",
+	  "remarks": "geosite:discord",
 	  "ruleType": 0
 	},
 	{
@@ -944,7 +954,7 @@
 		"geosite:pornhub"
 	  ],
 	  "enabled": true,
-	  "remarks": "pornhub",
+	  "remarks": "geosite:pornhub",
 	  "ruleType": 0
 	},
 	{
