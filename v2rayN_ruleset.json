@@ -1,6 +1,20 @@
 [
 	{
 	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "process": [
+		"WWE2K25_x64.exe",
+		"crashpad_handler.exe",
+		"crashpad_http_upload.exe",
+		"crashpad_database_util.exe"
+	  ],
+	  "enabled": true,
+	  "remarks": "WWE",
+	  "ruleType": 0
+	},
+	{
+	  "port": "",
 	  "outboundTag": "direct",
 	  "process": [
 		"LeagueClient.exe",
