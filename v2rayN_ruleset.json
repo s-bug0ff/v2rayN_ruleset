@@ -4,6 +4,30 @@
 	  "network": "tcp,udp",
 	  "outboundTag": "proxy",
 	  "process": [
+		"WH40KRT.exe"
+	  ],
+	  "enabled": true,
+	  "remarks": "WH40",
+	  "ruleType": 0
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "process": [
+		"AniLibrix.exe",
+		"elevate.exe",
+		"Uninstall AniLibrix.exe"
+	  ],
+	  "enabled": true,
+	  "remarks": "AniLibrix.exe",
+	  "ruleType": 0
+	},
+	{
+	  "port": "",
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "process": [
 		"WWE2K25_x64.exe",
 		"crashpad_handler.exe",
 		"crashpad_http_upload.exe",
