@@ -1,5 +1,45 @@
 [
 	{
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "domain": [
+		"geosite:anthropic"
+	  ],
+	  "enabled": true,
+	  "remarks": "claude",
+	  "ruleType": 0
+	},
+	{
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "domain": [
+		"geosite:xai"
+	  ],
+	  "enabled": true,
+	  "remarks": "grok",
+	  "ruleType": 0
+	},
+	{
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "domain": [
+		"geosite:deepseek"
+	  ],
+	  "enabled": true,
+	  "remarks": "deepseek",
+	  "ruleType": 0
+	},
+	{
+	  "network": "tcp,udp",
+	  "outboundTag": "proxy",
+	  "domain": [
+		"geosite:perplexity"
+	  ],
+	  "enabled": true,
+	  "remarks": "perplexity",
+	  "ruleType": 0
+	},
+	{
 	  "port": "",
 	  "network": "tcp,udp",
 	  "outboundTag": "proxy",
